@@ -42,8 +42,8 @@ const features = [
   },
   {
     icon: Users,
-    title: "Award-Winning Team",
-    description: "50+ experienced designers and craftsmen with a collective expertise of over 200 years in interior design.",
+    title: "Experienced Design Professionals",
+    description: "Our experienced designers and craftsmen work closely to transform spaces with practical design, quality materials, and seamless execution from concept to completion.",
   },
   {
     icon: Lightbulb,
@@ -68,9 +68,9 @@ const features = [
 ];
 
 const stats = [
-  { number: "500+", label: "Projects Delivered", suffix: "" },
-  { number: "15+", label: "Years of Excellence", suffix: "" },
-  { number: "98%", label: "Happy Clients", suffix: "" },
+  { number: "5000+", label: "Projects Delivered", suffix: "" },
+  { number: "10+", label: "Years of Excellence", suffix: "" },
+  { number: "99%", label: "Happy Clients", suffix: "" },
   { number: "₹50Cr+", label: "Projects Value", suffix: "" },
 ];
 

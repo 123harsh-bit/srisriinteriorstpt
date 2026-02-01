@@ -29,17 +29,17 @@ const values = [
 ];
 
 const achievements = [
-  { number: "500+", label: "Happy Families", icon: Users },
-  { number: "15+", label: "Years of Excellence", icon: Award },
-  { number: "98%", label: "On-Time Delivery", icon: Clock },
+  { number: "5000+", label: "Happy Families", icon: Users },
+  { number: "10+", label: "Years of Excellence", icon: Award },
+  { number: "99%", label: "On-Time Delivery", icon: Clock },
   { number: "10 Yr", label: "Warranty Provided", icon: Shield },
 ];
 
 const milestones = [
-  { year: "2009", title: "Founded with a Vision", description: "Started with a small team of 3 passionate designers in Hyderabad." },
-  { year: "2014", title: "100th Project Milestone", description: "Completed our 100th residential project, establishing our reputation." },
-  { year: "2018", title: "Expanded Operations", description: "Opened offices in Bangalore and Chennai, serving South India." },
-  { year: "2022", title: "500+ Projects", description: "Achieved 500+ completed projects with 98% client satisfaction." },
+  { year: "2016", title: "Founded with a Vision", description: "Started with a small team of 3 passionate designers in Hyderabad." },
+  { year: "2018", title: "100th Project Milestone", description: "Completed our 100th residential project, establishing our reputation." },
+  { year: "2020", title: "Expanded Operations", description: "Opened offices in Bangalore and Chennai, serving South India." },
+  { year: "2022", title: "5000+ Projects", description: "Achieved 5000+ completed projects with 99% client satisfaction." },
   { year: "2024", title: "Industry Recognition", description: "Awarded 'Best Interior Design Firm' by Interior Design Association." },
 ];
 
@@ -82,7 +82,7 @@ const About = () => {
                 <span className="text-gradient-gold">Inspire Living</span>
               </h1>
               <p className="text-white/85 text-lg md:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
-                For over 15 years, Sri Sri Interiors has been transforming ordinary spaces 
+                For over 10 years, Sri Sri Interiors has been transforming ordinary spaces 
                 into extraordinary experiences. We don't just design interiors—we design lifestyles.
               </p>
             </GlassCard>
@@ -108,7 +108,7 @@ const About = () => {
                   create spaces that don't just look beautiful, but feel like home.
                 </p>
                 <p>
-                  Over 500 projects later, that vision remains at the heart of everything we do. 
+                  Over 5000 projects later, that vision remains at the heart of everything we do. 
                   From intimate apartments to sprawling villas, from modern offices to boutique 
                   retail spaces—we approach each project with the same dedication to excellence.
                 </p>
@@ -129,11 +129,11 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent" />
                 </motion.div>
                 <GlassCard className="absolute -bottom-8 -left-8 p-6 shadow-xl">
-                  <span className="text-5xl font-bold text-primary">15+</span>
+                  <span className="text-5xl font-bold text-primary">10+</span>
                   <p className="text-muted-foreground text-sm mt-1">Years of<br />Excellence</p>
                 </GlassCard>
                 <GlassCard className="absolute -top-4 -right-4 p-4 shadow-xl">
-                  <span className="text-3xl font-bold text-accent">500+</span>
+                  <span className="text-3xl font-bold text-accent">5000+</span>
                   <p className="text-muted-foreground text-xs mt-1">Projects</p>
                 </GlassCard>
               </div>

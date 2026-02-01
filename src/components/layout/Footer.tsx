@@ -87,13 +87,13 @@ const Footer = () => {
             </h4>
             <ul className="space-y-5">
               <li>
-                <a href="tel:+919876543210" className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group">
+                <a href="tel:+919490876503" className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group">
                   <div className="w-10 h-10 rounded-xl bg-white/5 group-hover:bg-accent/20 flex items-center justify-center transition-colors flex-shrink-0">
                     <Phone size={16} className="text-accent" />
                   </div>
                   <div>
                     <span className="block text-white/40 text-xs mb-1">Call Us</span>
-                    <span className="block">+91 98765 43210</span>
+                    <span className="block">+91 9490876503</span>
                   </div>
                 </a>
               </li>
@@ -115,7 +115,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-white/40 text-xs mb-1">Location</span>
-                    <span className="block">Hyderabad, Telangana</span>
+                    <span className="block">Tirupati, Andhra Pradesh</span>
                   </div>
                 </div>
               </li>

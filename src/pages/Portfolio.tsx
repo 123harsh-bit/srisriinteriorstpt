@@ -24,10 +24,11 @@ import kitchenAfter from "@/assets/kitchen-after.jpg";
 import bedroomBefore from "@/assets/bedroom-before.jpg";
 import bedroomAfter from "@/assets/bedroom-after.jpg";
 
+
 const categories = ["All", "Residential", "Kitchen", "Bedroom", "Commercial"];
 
 const projects = [
-  { image: portfolio1, title: "Luxury Villa Interiors", category: "Residential", description: "Complete transformation of a 4000 sq.ft villa with contemporary design elements." },
+  { image: portfolio2, title: "Luxury Villa Interiors", category: "Residential", description: "Complete transformation of a 4000 sq.ft villa with contemporary design elements." },
   { image: portfolio2, title: "Modern Penthouse", category: "Residential", description: "A stunning penthouse makeover featuring panoramic city views." },
   { image: portfolio3, title: "Elegant Dining Space", category: "Residential", description: "Open-concept dining area with custom Italian marble flooring." },
   { image: heroImage, title: "Contemporary Living Room", category: "Residential", description: "Minimalist living space with premium fabric upholstery." },
@@ -102,7 +103,7 @@ const Portfolio = () => {
             initial={{ scale: 1.15 }} 
             animate={{ scale: 1 }} 
             transition={{ duration: 2 }} 
-            src={portfolio1} 
+            src={portfolio2} 
             alt="Portfolio showcase" 
             className="w-full h-full object-cover opacity-25" 
           />
