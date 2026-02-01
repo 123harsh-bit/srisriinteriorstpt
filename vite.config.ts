@@ -4,16 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // ❌ REMOVE base for Render
-
-  server: {
-    host: "::",
-    port: 8080,
-    hmr: {
-      overlay: false,
-    },
-  },
-
   plugins: [
     react(),
     mode === "development" && componentTagger(),
