@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react"; // Removed Linkedin import
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      icon: Instagram,
+      label: "Instagram",
+      url: "https://instagram.com/srisriinteriors",
+      color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500"
+    },
+    {
+      icon: Facebook,
+      label: "Facebook", 
+      url: "https://facebook.com/srisriinteriors",
+      color: "hover:bg-blue-600"
+    },
+    // LinkedIn has been removed
+  ];
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       {/* Decorative Top Border */}
@@ -31,15 +47,18 @@ const Footer = () => {
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-4 pt-2">
-              {[Instagram, Facebook, Linkedin].map((Icon, index) => (
+              {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-xl bg-white/5 hover:bg-accent/20 flex items-center justify-center transition-colors"
+                  className={`w-10 h-10 rounded-xl bg-white/5 ${social.color} flex items-center justify-center transition-all duration-300 hover:text-white`}
+                  aria-label={social.label}
                 >
-                  <Icon size={18} className="text-white/70" />
+                  <social.icon size={18} className="text-white/70 hover:text-white" />
                 </motion.a>
               ))}
             </div>
@@ -87,7 +106,10 @@ const Footer = () => {
             </h4>
             <ul className="space-y-5">
               <li>
-                <a href="tel:+919490876503" className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group">
+                <a 
+                  href="tel:+919490876503" 
+                  className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group"
+                >
                   <div className="w-10 h-10 rounded-xl bg-white/5 group-hover:bg-accent/20 flex items-center justify-center transition-colors flex-shrink-0">
                     <Phone size={16} className="text-accent" />
                   </div>
@@ -98,13 +120,16 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@srisriinteriors.com" className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group">
+                <a 
+                  href="mailto:srisriinteriorstpt@gmail.com" // Updated email
+                  className="flex items-start gap-4 text-sm text-white/60 hover:text-white transition-colors group"
+                >
                   <div className="w-10 h-10 rounded-xl bg-white/5 group-hover:bg-accent/20 flex items-center justify-center transition-colors flex-shrink-0">
                     <Mail size={16} className="text-accent" />
                   </div>
                   <div>
                     <span className="block text-white/40 text-xs mb-1">Email</span>
-                    <span className="block">info@srisriinteriors.com</span>
+                    <span className="block">srisriinteriorstpt@gmail.com</span>
                   </div>
                 </a>
               </li>
@@ -115,7 +140,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-white/40 text-xs mb-1">Location</span>
-                    <span className="block">Tirupati, Andhra Pradesh</span>
+                    <span className="block">Near Dmart, opposite Bharath petroleum, Mangalam Road, Tirupati, Andhra Pradesh 517501</span>
                   </div>
                 </div>
               </li>
@@ -129,8 +154,29 @@ const Footer = () => {
             © {new Date().getFullYear()} Sri Sri Interiors. Crafted with passion.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white/60 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white/60 transition-colors">Terms of Service</Link>
+            {/* Social Links in Footer Bottom */}
+            <div className="flex items-center gap-3 ml-4">
+              <a 
+                href="https://instagram.com/srisriinteriors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/80 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} />
+              </a>
+              <a 
+                href="https://facebook.com/srisriinteriors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/80 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
