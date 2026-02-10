@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, Clock, Sparkles, Loader2, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Clock, Sparkles, Loader2, ArrowRight, Instagram, MessageCircle, Facebook } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,10 +11,55 @@ import { toast } from "sonner";
 import heroImage from "@/assets/hero-living-room.jpg";
 
 const contactInfo = [
-  { icon: Phone, title: "Phone", details: ["+91 94908 76503"] },
-  { icon: Mail, title: "Email", details: ["srisriinteriorstpt@gmail.com"] },
-  { icon: MapPin, title: "Office", details: ["Near Dmart , opposite Bharath petroleum, Mangalam Road, Tirupati,Andhra Pradesh 517501"] },
-  { icon: Clock, title: "Working Hours", details: ["Mon - Sun: 9:00 AM - 7:00 PM"] },
+  { 
+    icon: Phone, 
+    title: "Phone", 
+    details: ["+91 94908 76503"],
+    action: "tel:+919490876503",
+    isLink: true
+  },
+  { 
+    icon: Mail, 
+    title: "Email", 
+    details: ["srisriinteriorstpt@gmail.com"],
+    action: "mailto:srisriinteriorstpt@gmail.com",
+    isLink: true
+  },
+  { 
+    icon: MapPin, 
+    title: "Office", 
+    details: ["Near Dmart , opposite Bharath petroleum, Mangalam Road, Tirupati,Andhra Pradesh 517501"] 
+  },
+  { 
+    icon: Clock, 
+    title: "Working Hours", 
+    details: ["Mon - Sun: 9:00 AM - 7:00 PM"] 
+  },
+];
+
+const socialLinks = [
+  {
+    icon: Instagram,
+    label: "Instagram",
+    url: "https://instagram.com/srisriinteriors",
+    color: "bg-gradient-to-r from-purple-500 to-pink-500",
+    hoverColor: "hover:from-purple-600 hover:to-pink-600"
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    url: "https://wa.me/919490876503",
+    color: "bg-green-500",
+    hoverColor: "hover:bg-green-600"
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    url: "https://facebook.com/srisriinteriors", // Your Facebook username
+    color: "bg-blue-600",
+    hoverColor: "hover:bg-blue-700"
+  },
+  // LinkedIn has been removed as requested
 ];
 
 const Contact = () => {
@@ -116,6 +161,22 @@ _This message was sent via Sri Sri Interiors website_
               Ready to transform your space? Reach out to us and let's discuss how we can bring your vision to life.
             </p>
             
+            {/* Social Media Icons in Hero */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-10 h-10 rounded-full ${social.color} ${social.hoverColor} flex items-center justify-center text-white hover:scale-110 transition-all duration-300`}
+                  aria-label={`Follow us on ${social.label}`}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button 
                 onClick={() => {
@@ -147,6 +208,25 @@ _This message was sent via Sri Sri Interiors website_
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
                     Send Us a Message
                   </h2>
+                  
+                  {/* Quick Social Links */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-gray-600 dark:text-gray-400 text-sm">Follow us:</span>
+                    <div className="flex gap-2">
+                      {socialLinks.map((social) => (
+                        <a
+                          key={social.label}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`w-8 h-8 rounded-full ${social.color} ${social.hoverColor} flex items-center justify-center text-white hover:scale-110 transition-all`}
+                          aria-label={social.label}
+                        >
+                          <social.icon className="w-4 h-4" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -266,11 +346,8 @@ _This message was sent via Sri Sri Interiors website_
                 </p>
               </div>
               
-              {contactInfo.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm hover:shadow-md transition-shadow"
-                >
+              {contactInfo.map((item, index) => {
+                const content = (
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-6 h-6 text-primary" />
@@ -286,8 +363,51 @@ _This message was sent via Sri Sri Interiors website_
                       ))}
                     </div>
                   </div>
+                );
+
+                return item.isLink ? (
+                  <a
+                    key={item.title}
+                    href={item.action}
+                    target={item.action.startsWith('http') ? '_blank' : undefined}
+                    rel={item.action.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm hover:shadow-md transition-shadow hover:border-primary/50"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div
+                    key={item.title}
+                    className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    {content}
+                  </div>
+                );
+              })}
+              
+              {/* Social Media Links Card */}
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-4 text-center">
+                  Connect With Us
+                </h4>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex flex-col items-center ${social.color} ${social.hoverColor} text-white rounded-lg p-3 min-w-[80px] transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+                    >
+                      <social.icon className="w-6 h-6 mb-2" />
+                      <span className="text-xs font-medium">{social.label}</span>
+                    </a>
+                  ))}
                 </div>
-              ))}
+                <p className="text-center text-gray-600 dark:text-gray-400 mt-4 text-sm">
+                  Follow for latest designs & updates
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -404,6 +524,32 @@ _This message was sent via Sri Sri Interiors website_
             <p className="text-white/75 text-lg mb-8 max-w-xl mx-auto">
               Let's discuss your project and create a space that reflects your style and personality.
             </p>
+            
+            {/* Social Media CTA */}
+            <div className="mb-8">
+              <p className="text-white/75 mb-4">Follow us on social media:</p>
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://instagram.com/srisriinteriors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span>@srisriinteriors</span>
+                </a>
+                <a
+                  href="https://facebook.com/srisriinteriors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all"
+                >
+                  <Facebook className="w-5 h-5" />
+                  <span>Facebook</span>
+                </a>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => {
