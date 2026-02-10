@@ -12,7 +12,7 @@ import heroImage from "@/assets/hero-luxury-living.jpg";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
 import officeImage from "@/assets/service-office.jpg";
-import portfolio1 from "@/assets/portfolio-1.jpg";
+import port from "@/assets/port.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 
@@ -215,8 +215,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Client Logos Marquee */}
-      <ClientLogos />
+      {/* Trusted Brands Section */}
+      <section className="py-16 bg-background/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-12">
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+              Our Esteemed Partners
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+              Trusted by Leading Brands
+            </h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              We're honored to have worked with some of the most respected names across industries, 
+              delivering interior excellence for their spaces.
+            </p>
+          </AnimatedSection>
+          <ClientLogos />
+        </div>
+      </section>
 
       {/* Why Choose Us Section */}
       <section className="section-padding bg-background">
@@ -462,5 +478,5 @@ const Index = () => {
     </Layout>
   );
 };
-
+ 
 export default Index;
