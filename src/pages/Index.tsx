@@ -75,7 +75,7 @@ const stats = [
 ];
 
 const portfolioPreview = [
-  { image: portfolio1, title: "Luxury Villa", category: "Residential" },
+  { image: port, title: "Luxury Villa", category: "Residential" }, // CHANGED: portfolio1 → port
   { image: portfolio2, title: "Modern Penthouse", category: "Residential" },
   { image: portfolio3, title: "Elegant Dining", category: "Dining Room" },
 ];
