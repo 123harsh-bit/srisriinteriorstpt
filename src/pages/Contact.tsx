@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, Clock, Sparkles, Loader2, ArrowRight, Instagram, MessageCircle, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Clock, Sparkles, Loader2, ArrowRight, Instagram, Facebook } from "lucide-react"; // Removed MessageCircle import
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,20 +46,13 @@ const socialLinks = [
     hoverColor: "hover:from-purple-600 hover:to-pink-600"
   },
   {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    url: "https://wa.me/919490876503",
-    color: "bg-green-500",
-    hoverColor: "hover:bg-green-600"
-  },
-  {
     icon: Facebook,
     label: "Facebook",
-    url: "https://facebook.com/srisriinteriors", // Your Facebook username
+    url: "https://facebook.com/srisriinteriors",
     color: "bg-blue-600",
     hoverColor: "hover:bg-blue-700"
   },
-  // LinkedIn has been removed as requested
+  // WhatsApp has been removed as requested
 ];
 
 const Contact = () => {
@@ -317,11 +310,11 @@ _This message was sent via Sri Sri Interiors website_
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                          Redirecting to WhatsApp...
+                          Sending Message...
                         </>
                       ) : (
                         <>
-                          Send via WhatsApp
+                          Send Message
                           <Send className="w-4 h-4 ml-2" />
                         </>
                       )}
@@ -329,7 +322,7 @@ _This message was sent via Sri Sri Interiors website_
                   </div>
                   
                   <p className="text-gray-500 text-sm text-center mt-4">
-                    We'll respond to your message via WhatsApp within 24 hours.
+                    We'll respond to your message within 24 hours.
                   </p>
                 </form>
               </div>
@@ -528,12 +521,12 @@ _This message was sent via Sri Sri Interiors website_
             {/* Social Media CTA */}
             <div className="mb-8">
               <p className="text-white/75 mb-4">Follow us on social media:</p>
-              <div className="flex justify-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a
                   href="https://instagram.com/srisriinteriors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
                 >
                   <Instagram className="w-5 h-5" />
                   <span>@srisriinteriors</span>
@@ -542,10 +535,10 @@ _This message was sent via Sri Sri Interiors website_
                   href="https://facebook.com/srisriinteriors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all"
                 >
                   <Facebook className="w-5 h-5" />
-                  <span>Facebook</span>
+                  <span>@srisriinteriors</span>
                 </a>
               </div>
             </div>
