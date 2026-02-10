@@ -18,7 +18,7 @@ import jmc from "@/assets/jmc.jpeg";
 import kps from "@/assets/kps.png";
 import manasain from "@/assets/manasain.png";
 import plr from "@/assets/plr.png";
-import pvgn from "@/assets/pvgn.jpg";
+import pvgn from "@/assets/pvgn.png";
 import sainik from "@/assets/sainik.png";
 import tcl from "@/assets/tcl.png";
 import yamaha from "@/assets/yamaha.png";
