@@ -453,7 +453,7 @@ _This message was sent via Sri Sri Interiors website_
                     Address
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-gray-50 dark:bg-gray-900 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
-                    Near dmart,opposite Bharath petroleum, Mangalam Road, Tirupati Andhra Pradesh 517501
+                    Address -  Near dmart,opposite Bharath petroleum, Mangalam Road, Tirupati Andhra Pradesh 517501
                   </p>
                 </div>
                 
