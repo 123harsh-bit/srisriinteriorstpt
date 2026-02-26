@@ -63,21 +63,25 @@ const ClientLogos = () => {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 30,
+            duration: 60, // Slower scroll (was 30)
             ease: "linear",
           },
         }}
       >
         {duplicatedClients.map((client, index) => (
+          // Outer div with gradient background → creates the border
           <div
             key={`${client.name}-${index}`}
-            className="flex-shrink-0 px-10 py-5 rounded-2xl bg-background border border-border shadow-sm flex items-center justify-center"
+            className="flex-shrink-0 p-[2px] rounded-2xl bg-gradient-to-r from-purple-400 to-pink-400"
           >
-            <img
-              src={client.logo}
-              alt={client.name}
-              className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300"
-            />
+            {/* Inner div with original background */}
+            <div className="bg-background rounded-2xl px-10 py-5 flex items-center justify-center">
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300"
+              />
+            </div>
           </div>
         ))}
       </motion.div>
