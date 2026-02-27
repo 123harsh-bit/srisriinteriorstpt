@@ -46,13 +46,13 @@ const clients = [
 ];
 
 const ClientLogos = () => {
-  const duplicatedClients = [...clients, ...clients];
+  const duplicated = [...clients, ...clients];
 
   return (
     <section className="py-16 bg-[#f8f6f4] overflow-hidden">
       <div className="relative max-w-7xl mx-auto overflow-hidden">
 
-        {/* Fade Edges */}
+        {/* Soft fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8f6f4] to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f6f4] to-transparent z-10" />
 
@@ -61,18 +61,26 @@ const ClientLogos = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
           }}
         >
-          {duplicatedClients.map((client, index) => (
-            <div key={`${client.name}-${index}`} className="flex-shrink-0">
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="h-14 w-auto object-contain opacity-60 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0"
-              />
-            </div>
+          {duplicated.map((client, index) => (
+            <img
+              key={index}
+              src={client.logo}
+              alt={client.name}
+              className="
+                h-14
+                w-auto
+                object-contain
+                opacity-70
+                hover:opacity-100
+                transition
+                duration-300
+                mix-blend-multiply
+              "
+            />
           ))}
         </motion.div>
 
