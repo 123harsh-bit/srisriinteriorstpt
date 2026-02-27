@@ -5,13 +5,13 @@ import ttd from "@/assets/ttd.png";
 import svim from "@/assets/svim.png";
 import iaa from "@/assets/iaa.png";
 
-// New imports
-import amaraRajaGroup from "@/assets/Amara_raja_group.png";
-import amaraHospital from "@/assets/amarahospital.png";
+// New imports (MAKE SURE filenames match exactly in assets folder)
+import amaraRajaGroup from "@/assets/amara-raja-group.png";
+import amaraHospital from "@/assets/amara-hospital.png";
 import atlantis from "@/assets/atlantis.png";
 import celkon from "@/assets/celkon.png";
-import credaiLogo from "@/assets/CREDAI-Logo.jpg";
-import ekanteBliss from "@/assets/ekante-bliss.jpg"; // rename file without space
+import credaiLogo from "@/assets/credai-logo.jpg";
+import ekanteBliss from "@/assets/ekante-bliss.jpg";
 import iitt from "@/assets/iitt.png";
 import isser from "@/assets/isser.png";
 import jmc from "@/assets/jmc.jpeg";
@@ -52,7 +52,7 @@ const ClientLogos = () => {
     <section className="py-16 bg-[#f8f6f4] overflow-hidden">
       <div className="relative max-w-7xl mx-auto overflow-hidden">
 
-        {/* Fade edges */}
+        {/* Fade Edges */}
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8f6f4] to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f6f4] to-transparent z-10" />
 
@@ -61,7 +61,7 @@ const ClientLogos = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 12, // speed
+            duration: 12,
             repeat: Infinity,
           }}
         >
