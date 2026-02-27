@@ -5,13 +5,13 @@ import ttd from "@/assets/ttd.png";
 import svim from "@/assets/svim.png";
 import iaa from "@/assets/iaa.png";
 
-// New imports (MAKE SURE filenames match exactly in assets folder)
-import amaraRajaGroup from "@/assets/amara-raja-group.png";
-import amaraHospital from "@/assets/amara-hospital.png";
+// New imports for your logos
+import amaraRajaGroup from "@/assets/Amara_raja_group.png";
+import amaraHospital from "@/assets/amarahospital.png";
 import atlantis from "@/assets/atlantis.png";
 import celkon from "@/assets/celkon.png";
-import credaiLogo from "@/assets/credai-logo.jpg";
-import ekanteBliss from "@/assets/ekante-bliss.jpg";
+import credaiLogo from "@/assets/CREDAI-Logo.jpg";
+import ekanteBliss from "@/assets/ekante bliss.jpg";
 import iitt from "@/assets/iitt.png";
 import isser from "@/assets/isser.png";
 import jmc from "@/assets/jmc.jpeg";
