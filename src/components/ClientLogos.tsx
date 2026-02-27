@@ -5,13 +5,13 @@ import ttd from "@/assets/ttd.png";
 import svim from "@/assets/svim.png";
 import iaa from "@/assets/iaa.png";
 
-// New imports for your logos
+// New imports
 import amaraRajaGroup from "@/assets/Amara_raja_group.png";
 import amaraHospital from "@/assets/amarahospital.png";
 import atlantis from "@/assets/atlantis.png";
 import celkon from "@/assets/celkon.png";
 import credaiLogo from "@/assets/CREDAI-Logo.jpg";
-import ekanteBliss from "@/assets/ekante bliss.jpg";
+import ekanteBliss from "@/assets/ekante-bliss.jpg"; // rename file without space
 import iitt from "@/assets/iitt.png";
 import isser from "@/assets/isser.png";
 import jmc from "@/assets/jmc.jpeg";
@@ -22,7 +22,6 @@ import pvgn from "@/assets/pvgn.png";
 import sainik from "@/assets/sainik.png";
 import tcl from "@/assets/tcl.png";
 import yamaha from "@/assets/yamaha.png";
-// your existing imports stay same
 
 const clients = [
   { name: "TTD", logo: ttd },
@@ -50,51 +49,33 @@ const ClientLogos = () => {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="py-20 px-6">
-      
-      {/* Gradient Border Wrapper */}
-      <div
-        className="rounded-3xl p-[2px]"
-        style={{
-          background: "linear-gradient(90deg, #ff6ec4, #7873f5)",
-        }}
-      >
-        {/* Inner White Container */}
-        <div className="bg-white rounded-3xl overflow-hidden py-12">
-          
-          <div className="relative overflow-hidden">
-            
-            {/* Fade Left */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-            
-            {/* Fade Right */}
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+    <section className="py-16 bg-[#f8f6f4] overflow-hidden">
+      <div className="relative max-w-7xl mx-auto overflow-hidden">
 
-            <motion.div
-              className="flex items-center gap-24"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                ease: "linear",
-                duration: 25,
-                repeat: Infinity,
-              }}
-            >
-              {duplicatedClients.map((client, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 bg-gray-50 px-12 py-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition duration-300"
-                  />
-                </div>
-              ))}
-            </motion.div>
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8f6f4] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f6f4] to-transparent z-10" />
 
-          </div>
-        </div>
+        <motion.div
+          className="flex items-center gap-24"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            ease: "linear",
+            duration: 12, // speed
+            repeat: Infinity,
+          }}
+        >
+          {duplicatedClients.map((client, index) => (
+            <div key={`${client.name}-${index}`} className="flex-shrink-0">
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-14 w-auto object-contain opacity-60 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0"
+              />
+            </div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );
