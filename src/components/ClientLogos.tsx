@@ -49,12 +49,14 @@ const ClientLogos = () => {
   const duplicated = [...clients, ...clients];
 
   return (
-    <section className="py-16 bg-[#f8f6f4] overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <div className="relative max-w-7xl mx-auto overflow-hidden">
 
-        {/* Soft fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8f6f4] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8f6f4] to-transparent z-10" />
+        {/* Edge fade that blends naturally */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 pointer-events-none 
+                        bg-gradient-to-r from-[inherit] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 pointer-events-none 
+                        bg-gradient-to-l from-[inherit] to-transparent z-10" />
 
         <motion.div
           className="flex items-center gap-24"
@@ -67,19 +69,10 @@ const ClientLogos = () => {
         >
           {duplicated.map((client, index) => (
             <img
-              key={index}
+              key={`${client.name}-${index}`}
               src={client.logo}
               alt={client.name}
-              className="
-                h-14
-                w-auto
-                object-contain
-                opacity-70
-                hover:opacity-100
-                transition
-                duration-300
-                mix-blend-multiply
-              "
+              className="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"
             />
           ))}
         </motion.div>
