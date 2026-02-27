@@ -1,5 +1,27 @@
 import { motion } from "framer-motion";
 
+// Existing imports
+import ttd from "@/assets/ttd.png";
+import svim from "@/assets/svim.png";
+import iaa from "@/assets/iaa.png";
+
+// New imports for your logos
+import amaraRajaGroup from "@/assets/Amara_raja_group.png";
+import amaraHospital from "@/assets/amarahospital.png";
+import atlantis from "@/assets/atlantis.png";
+import celkon from "@/assets/celkon.png";
+import credaiLogo from "@/assets/CREDAI-Logo.jpg";
+import ekanteBliss from "@/assets/ekante bliss.jpg";
+import iitt from "@/assets/iitt.png";
+import isser from "@/assets/isser.png";
+import jmc from "@/assets/jmc.jpeg";
+import kps from "@/assets/kps.png";
+import manasain from "@/assets/manasain.png";
+import plr from "@/assets/plr.png";
+import pvgn from "@/assets/pvgn.png";
+import sainik from "@/assets/sainik.png";
+import tcl from "@/assets/tcl.png";
+import yamaha from "@/assets/yamaha.png";
 // your existing imports stay same
 
 const clients = [
